@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How It Works & FAQ — Veltra</title>
+<meta name="description" content="Learn exactly how Veltra works: registration, SadaPay deposits, plan activation, daily profit crediting, referral commissions and withdrawals." />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="how">
+
+<div id="app-header"></div>
+
+<section class="section" style="padding-bottom:40px">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>From registration to payout — fully explained</h2>
+      <p>Veltra keeps every step visible from your dashboard, so you always know where your money is.</p>
+    </div>
+
+    <div class="timeline" style="max-width:860px;margin-inline:auto">
+      <div class="timeline-item">
+        <div class="marker"><span class="dot"></span><span class="bar"></span></div>
+        <div class="content">
+          <h3>1. Create your account</h3>
+          <p class="small">Register with your first name, last name, username, phone number, email and password.
+            No OTP verification is required, so your account is live immediately. If a friend invited you, paste
+            their referral code during sign-up to lock in their commission tracking.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="marker"><span class="dot"></span><span class="bar"></span></div>
+        <div class="content">
+          <h3>2. Choose an investment tier</h3>
+          <p class="small">Pick Beginner (Rs 1,200), Intermediate (Rs 1,600), Advanced (Rs 2,600) or VIP Master
+            (Rs 4,000). Each tier has its own daily profit rate and cycle length.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="marker"><span class="dot"></span><span class="bar"></span></div>
+        <div class="content">
+          <h3>3. Deposit via SadaPay</h3>
+          <p class="small">Transfer the exact plan amount to the official Veltra wallet
+            (<b>Tanzeel Ul Rahman · 03289693983</b>). Then open the deposit page and submit your proof form with
+            your sender number and Transaction ID (TID).</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="marker"><span class="dot"></span><span class="bar"></span></div>
+        <div class="content">
+          <h3>4. Verification & activation</h3>
+          <p class="small">Your deposit appears as <span class="badge badge-pending">Pending</span> until the admin
+            matches your TID against the wallet statement. On approval your plan activates and, if this was your
+            first deposit, your referrer receives their 10% instant bonus.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="marker"><span class="dot"></span><span class="bar"></span></div>
+        <div class="content">
+          <h3>5. Daily profit crediting</h3>
+          <p class="small">Every 24 hours your profit is added to your dashboard balance automatically and logged in
+            your transaction history. Your referrer also receives 1.5% of that profit as a recurring commission.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="marker"><span class="dot"></span></div>
+        <div class="content">
+          <h3>6. Withdraw your earnings</h3>
+          <p class="small">Request a payout to SadaPay, EasyPaisa or JazzCash. The amount is held from your balance
+            immediately; once approved it is dispatched, and if rejected it is refunded to your balance
+            automatically.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="grid g-2" style="align-items:start">
+      <div class="card">
+        <span class="eyebrow">Profit Calculator</span>
+        <h3 class="mt-8">See what your tier can earn</h3>
+        <div class="form-group mt-16">
+          <label class="form-label">Select plan</label>
+          <select class="form-control" id="calcPlan"></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Days to simulate</label>
+          <input class="form-control" id="calcDays" type="number" min="1" max="365" value="30" />
+        </div>
+        <div class="grid" style="gap:10px;margin-top:6px">
+          <div class="mini-row"><span class="muted small">Investment</span><b id="calcAmount">—</b></div>
+          <div class="mini-row"><span class="muted small">Daily profit</span><b class="accent" id="calcDaily">—</b></div>
+          <div class="mini-row"><span class="muted small">Profit over period</span><b class="up" id="calcProfit">—</b></div>
+          <div class="mini-row"><span class="muted small">Total value</span><b id="calcTotal">—</b></div>
+          <div class="mini-row"><span class="muted small">Referrer earns (1.5% daily)</span><b id="calcRef">—</b></div>
+        </div>
+        <a class="btn btn-primary btn-block mt-24" href="plans.html">Choose This Plan</a>
+      </div>
+
+      <div class="grid" style="gap:18px">
+        <div class="card card-glow">
+          <h3>Referral commissions explained</h3>
+          <p class="small mb-16">Veltra pays on two levels, both credited to your balance automatically.</p>
+          <div class="grid" style="gap:10px">
+            <div class="mini-row">
+              <div><b>10% Instant Bonus</b><div class="tiny muted">On your referral's very first deposit</div></div>
+              <b class="accent">Once</b>
+            </div>
+            <div class="mini-row">
+              <div><b>1.5% Daily Commission</b><div class="tiny muted">Recurring, from their daily profit</div></div>
+              <b class="accent">Ongoing</b>
+            </div>
+            <div class="mini-row">
+              <div><b>Team size limit</b><div class="tiny muted">Unlimited direct referrals</div></div>
+              <b class="accent">None</b>
+            </div>
+          </div>
+          <a class="btn btn-outline btn-block mt-16" href="referral.html">Open referral program</a>
+        </div>
+        <div class="card">
+          <h3>Deposit & withdrawal rules</h3>
+          <ul class="small mb-0">
+            <li>Deposits accepted on SadaPay only at this time.</li>
+            <li>Minimum deposit equals your selected plan amount.</li>
+            <li>Minimum withdrawal is Rs 500 per request.</li>
+            <li>One TID per submission — duplicates are rejected.</li>
+            <li>Withdrawal amounts are held on request and refunded if rejected.</li>
+            <li>Payouts are dispatched within 24 hours of approval.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" style="padding-top:20px">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Everything you might ask</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>Do I need OTP verification to sign up?</summary>
+        <p>No. Veltra registration requires only your name, username, phone, email and password. Your account is
+          created instantly and you can log in right away.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I log in?</summary>
+        <p>Use either your username or your email address with your password on the login page.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where do I send my deposit?</summary>
+        <p>All deposits go to the official SadaPay wallet — Title: <b>Tanzeel Ul Rahman</b>,
+          Number: <b>03289693983</b>, IBAN: <b>PK50 SADA 0000 0032 8969 3983</b>. Always confirm the details on the
+          deposit page inside your account.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long does deposit approval take?</summary>
+        <p>Most deposits are verified within 30 minutes during support hours. You can track the status on your
+          dashboard as Pending, Approved or Rejected.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is a TID and where do I find it?</summary>
+        <p>The Transaction ID (TID) is the reference SadaPay generates for your transfer. It appears on your payment
+          confirmation screen and in your transaction history.</p>
+      </details>
+      <details class="faq-item">
+        <summary>When is my daily profit credited?</summary>
+        <p>Profit accrues every 24 hours from the moment your plan is activated and is added to your balance
+          automatically for the entire cycle length of the tier.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I have more than one active plan?</summary>
+        <p>Your account holds one active plan at a time. Once a cycle completes you can activate a new tier by
+          submitting a fresh deposit.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much can I withdraw and how fast?</summary>
+        <p>Minimum Rs 500 per request with no fixed upper limit other than your available balance. Approved
+          withdrawals are dispatched within 24 hours to your chosen wallet.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if my withdrawal is rejected?</summary>
+        <p>The held amount is refunded to your Veltra balance instantly and a refund entry appears in your
+          transaction history. Nothing is deducted for rejected requests.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there any joining or monthly fee?</summary>
+        <p>No. Veltra charges no registration fee and no monthly maintenance fee. You only fund the investment tier
+          you choose.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card text-center" style="padding:48px;background:var(--grad-soft);border-color:rgba(0,230,195,.35)">
+      <h2>Still have questions?</h2>
+      <p style="max-width:620px;margin-inline:auto">Our support desk is available Monday to Saturday,
+        10:00 AM – 8:00 PM (PKT).</p>
+      <div class="flex gap-12 center wrap mt-16">
+        <a class="btn btn-primary" href="contact.html">Contact Support</a>
+        <a class="btn btn-outline" href="plans.html">Browse Plans</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/how-it-works.js"></script>
+</body>
+</html>

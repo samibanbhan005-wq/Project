@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>User Dashboard — Veltra</title>
+<meta name="description" content="Track your Veltra balance, active investment plan, daily profits, deposits, withdrawals and referral earnings." />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="dashboard">
+
+<div id="app-header"></div>
+
+<section class="section" style="padding-top:36px">
+  <div class="container">
+
+    <div class="dash-head mb-24">
+      <div class="between">
+        <div>
+          <span class="eyebrow" id="dashGreeting">Dashboard</span>
+          <h2 class="mb-8" id="dashTitle">Welcome back</h2>
+          <div class="flex gap-12 wrap small muted">
+            <span>Member since <b id="dashJoined">—</b></span>
+            <span>·</span>
+            <span>Referral code <b class="mono accent" id="dashRefCode">—</b></span>
+            <span>·</span>
+            <span>Status <span class="badge badge-active" id="dashStatus">Active</span></span>
+          </div>
+        </div>
+        <div class="flex gap-12 wrap">
+          <a class="btn btn-primary" href="deposit.html">＋ Deposit</a>
+          <a class="btn btn-outline" href="withdraw.html">↗ Withdraw</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-grid mb-24" id="kpiGrid"></div>
+
+    <div class="grid g-2 mb-24" style="align-items:start">
+      <div class="card card-glow" id="planCard"></div>
+      <div class="grid" style="gap:18px">
+        <div class="card">
+          <div class="between mb-16">
+            <div class="card-title">Recent activity</div>
+            <a class="small" href="#" data-goto="transactions">View all →</a>
+          </div>
+          <div class="timeline" id="recentActivity"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Referral snapshot</div>
+          <div class="grid" style="gap:10px" id="refSnapshot"></div>
+          <a class="btn btn-outline btn-block mt-16" href="referral.html">Open referral program</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="deposits">Deposit History</button>
+      <button class="tab" data-tab="withdrawals">Withdrawals</button>
+      <button class="tab" data-tab="transactions">Transactions</button>
+      <button class="tab" data-tab="team">My Team</button>
+      <button class="tab" data-tab="settings">Profile</button>
+    </div>
+
+    <div class="tab-panel active" data-panel="overview">
+      <div class="grid g-2" style="align-items:start">
+        <div class="card">
+          <h3>Account summary</h3>
+          <div class="grid mt-16" style="gap:10px" id="summaryList"></div>
+        </div>
+        <div class="card">
+          <h3>Investment breakdown</h3>
+          <div class="grid mt-16" style="gap:10px" id="investBreakdown"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-panel="deposits">
+      <div class="between mb-16">
+        <h3 class="mb-0">Deposit requests</h3>
+        <a class="btn btn-primary btn-sm" href="deposit.html">New deposit</a>
+      </div>
+      <div id="depositTable"></div>
+    </div>
+
+    <div class="tab-panel" data-panel="withdrawals">
+      <div class="between mb-16">
+        <h3 class="mb-0">Withdrawal requests</h3>
+        <a class="btn btn-primary btn-sm" href="withdraw.html">Request withdrawal</a>
+      </div>
+      <div id="withdrawTable"></div>
+    </div>
+
+    <div class="tab-panel" data-panel="transactions">
+      <h3>Transaction history</h3>
+      <p class="small">Every profit credit, referral commission, deposit and payout recorded on your account.</p>
+      <div id="txTable"></div>
+    </div>
+
+    <div class="tab-panel" data-panel="team">
+      <h3>My referral team</h3>
+      <p class="small">Members who registered with your referral code.</p>
+      <div id="teamTable"></div>
+    </div>
+
+    <div class="tab-panel" data-panel="settings">
+      <div class="grid g-2" style="align-items:start">
+        <div class="card">
+          <h3>Profile details</h3>
+          <div class="grid mt-16" style="gap:10px" id="profileList"></div>
+        </div>
+        <div class="card">
+          <h3>Security</h3>
+          <p class="small">Your password is stored as a secure digest and is never displayed anywhere on the platform.</p>
+          <div class="alert alert-info mb-16"><span>ℹ</span><div>To change your registered phone number, email or password,
+            contact support with your username for verification.</div></div>
+          <button class="btn btn-danger btn-block" type="button" id="logoutBtnPage">Log out of this device</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

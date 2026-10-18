@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact & Support — Veltra</title>
+<meta name="description" content="Contact Veltra support for deposit verification, withdrawal issues, referral questions and account recovery." />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="contact">
+
+<div id="app-header"></div>
+
+<section class="section" style="padding-bottom:30px">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Contact Us</span>
+      <h2>We're here to help</h2>
+      <p>Deposit verification, withdrawal status, referral tracking or account recovery — our support desk
+        responds to every ticket.</p>
+    </div>
+
+    <div class="grid g-4 mb-24">
+      <div class="card card-hover">
+        <div class="icon-box mb-16">✉</div>
+        <h3>Email Support</h3>
+        <p class="small mb-8">Replies within 24 hours.</p>
+        <a class="small mono" href="mailto:support@veltra.pk">support@veltra.pk</a>
+      </div>
+      <div class="card card-hover">
+        <div class="icon-box mb-16">✆</div>
+        <h3>Phone / WhatsApp</h3>
+        <p class="small mb-8">Mon – Sat, 10am – 8pm PKT.</p>
+        <a class="small mono" href="tel:+923289693983">+92 328 969 3983</a>
+      </div>
+      <div class="card card-hover">
+        <div class="icon-box mb-16">⚡</div>
+        <h3>Deposit Desk</h3>
+        <p class="small mb-8">TID verification & plan activation.</p>
+        <a class="small" href="deposit.html">Submit payment proof →</a>
+      </div>
+      <div class="card card-hover">
+        <div class="icon-box mb-16">↗</div>
+        <h3>Payout Desk</h3>
+        <p class="small mb-8">Withdrawal status & refunds.</p>
+        <a class="small" href="withdraw.html">Request withdrawal →</a>
+      </div>
+    </div>
+
+    <div class="grid g-2" style="align-items:start">
+      <div class="card">
+        <h3>Send us a message</h3>
+        <p class="small">Fill in the form and our team will get back to you on the email address you provide.</p>
+        <form id="contactForm" novalidate>
+          <div class="form-row two">
+            <div class="form-group">
+              <label class="form-label" for="cName">Full name</label>
+              <input class="form-control" id="cName" placeholder="e.g. Ahmed Raza" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cEmail">Email address</label>
+              <input class="form-control" id="cEmail" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="form-row two">
+            <div class="form-group">
+              <label class="form-label" for="cTopic">Topic</label>
+              <select class="form-control" id="cTopic">
+                <option>Deposit verification</option>
+                <option>Withdrawal issue</option>
+                <option>Referral / commission</option>
+                <option>Account access</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cUsername">Username (optional)</label>
+              <input class="form-control" id="cUsername" placeholder="your username" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cMessage">Message</label>
+            <textarea class="form-control" id="cMessage" placeholder="Describe your issue, including any TID or transaction reference." required></textarea>
+            <div class="field-hint">Include your Transaction ID for faster deposit/withdrawal resolution.</div>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Send Message</button>
+          <div class="alert alert-success mt-16 hidden" id="contactSuccess">
+            <span>✓</span><div>Thanks! Your message has been received. Our support desk will reply within 24 hours.</div>
+          </div>
+        </form>
+      </div>
+
+      <div class="grid" style="gap:18px">
+        <div class="card card-glow">
+          <h3>Before you write in</h3>
+          <ul class="small mb-0">
+            <li><b>Deposit pending?</b> Approval usually completes within 30 minutes during support hours.</li>
+            <li><b>Wrong TID submitted?</b> Create a new ticket with the correct reference — duplicates are checked automatically.</li>
+            <li><b>Withdrawal rejected?</b> The amount is refunded to your balance instantly; check your transactions tab.</li>
+            <li><b>Referral not credited?</b> Commissions release only after the downline's deposit is approved.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Official deposit wallet</h3>
+          <p class="small">Funds should only ever be sent to the wallet below. Never trust another number.</p>
+          <div class="grid" style="gap:10px">
+            <div class="copy-value"><span class="tiny muted">Title</span><b id="ccTitle">Tanzeel Ul Rahman</b></div>
+            <div class="copy-value"><span class="tiny muted">Number</span><b id="ccNumber" class="mono">03289693983</b></div>
+            <div class="copy-value"><span class="tiny muted">IBAN</span><b id="ccIban" class="mono" style="font-size:.8rem">PK50 SADA 0000 0032 8969 3983</b></div>
+          </div>
+          <button class="btn btn-outline btn-block mt-16" type="button" id="copyWallet">Copy wallet details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>

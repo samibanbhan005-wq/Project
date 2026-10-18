@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Request Withdrawal — Instant Payout | Veltra</title>
+<meta name="description" content="Request a Veltra withdrawal to SadaPay, EasyPaisa or JazzCash. Balance is verified instantly before submission." />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="withdraw">
+
+<div id="app-header"></div>
+
+<section class="section" style="padding-top:36px">
+  <div class="container">
+
+    <div class="section-head" style="margin-bottom:28px">
+      <span class="eyebrow">Withdrawals</span>
+      <h2>Request a payout</h2>
+      <p>Submit a withdrawal request to your preferred wallet. Your balance is checked before submission and the
+        amount is held until the payout is dispatched.</p>
+    </div>
+
+    <div class="grid g-2" style="align-items:start">
+
+      <div class="grid" style="gap:18px">
+        <div class="kpi-grid" style="grid-template-columns:1fr 1fr">
+          <div class="kpi">
+            <div class="kpi-label">Available Balance</div>
+            <div class="kpi-value accent" id="wdBalance">Rs 0.00</div>
+            <div class="tiny muted">Ready to withdraw</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Total Withdrawn</div>
+            <div class="kpi-value" id="wdTotal">Rs 0.00</div>
+            <div class="tiny muted">Dispatched to date</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Pending Requests</div>
+            <div class="kpi-value" id="wdPending">0</div>
+            <div class="tiny muted">On hold</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Minimum Payout</div>
+            <div class="kpi-value" id="wdMin">Rs 500</div>
+            <div class="tiny muted">Per request</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Payout rules</h3>
+          <ul class="small mb-0">
+            <li>Requests are processed <b>Monday to Saturday, 10:00 AM – 8:00 PM PKT</b>.</li>
+            <li>Approved payouts are dispatched within 24 hours.</li>
+            <li>Ensure the account title matches the account number you enter.</li>
+            <li>Rejected requests are refunded to your balance automatically.</li>
+            <li>Only profit, referral earnings and available balance can be withdrawn.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="between mb-16">
+            <div class="card-title">Your withdrawal history</div>
+            <a class="small" href="dashboard.html">Dashboard →</a>
+          </div>
+          <div id="wdHistory"></div>
+        </div>
+      </div>
+
+      <div class="card card-glow">
+        <h3>Instant payout request</h3>
+        <p class="small">Completing this form places the amount on hold from your balance immediately.</p>
+
+        <form id="withdrawForm" novalidate class="mt-16">
+          <div class="form-group">
+            <label class="form-label" for="wAmount">Withdrawal amount (PKR)</label>
+            <input class="form-control mono" id="wAmount" inputmode="decimal" placeholder="e.g. 2500" required />
+            <div class="flex gap-8 wrap mt-8">
+              <button class="btn btn-outline btn-sm" type="button" data-pct="25">25%</button>
+              <button class="btn btn-outline btn-sm" type="button" data-pct="50">50%</button>
+              <button class="btn btn-outline btn-sm" type="button" data-pct="75">75%</button>
+              <button class="btn btn-outline btn-sm" type="button" data-pct="100">Max</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="wMethod">Payout method</label>
+            <select class="form-control" id="wMethod"></select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="wTitle">Account holder title</label>
+            <input class="form-control" id="wTitle" placeholder="Name registered on the wallet" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="wAccount">Account / mobile number</label>
+            <input class="form-control" id="wAccount" inputmode="numeric" placeholder="03001234567" required />
+            <div class="field-hint">Double-check this number — incorrect details cause payout failures.</div>
+          </div>
+
+          <div class="alert alert-info mb-16"><span>ℹ</span><div id="wdPreview">Enter an amount to see your
+            balance after this request.</div></div>
+
+          <button class="btn btn-primary btn-block" type="submit">Submit Withdrawal Request</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/withdraw.js"></script>
+</body>
+</html>

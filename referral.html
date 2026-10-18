@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Referral Program — Earn 10% + 1.5% Daily | Veltra</title>
+<meta name="description" content="Join the Veltra affiliate program: earn a 10% instant bonus on your referral's first deposit plus a recurring 1.5% daily commission from their profits." />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="referral">
+
+<div id="app-header"></div>
+
+<section class="section" style="padding-bottom:36px">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Referral & Affiliate Program</span>
+      <h2>Build a team. Earn on every level.</h2>
+      <p>Every Veltra member gets a unique invite link. Get paid instantly on first deposits and keep earning a
+        recurring commission every single day your team's plans run.</p>
+    </div>
+
+    <div class="grid g-2" style="align-items:start">
+      <div class="card card-glow">
+        <span class="eyebrow">Level 1 · Instant</span>
+        <h3 class="mt-8">10% Instant Bonus</h3>
+        <p class="small">The moment your referral's first deposit is approved by admin, 10% of that amount is
+          credited straight to your balance — no waiting period, no thresholds.</p>
+        <div class="mini-row"><span class="small muted">Example: referral invests Rs 2,600</span><b class="accent">You earn Rs 260</b></div>
+      </div>
+      <div class="card card-glow">
+        <span class="eyebrow">Level 1 · Recurring</span>
+        <h3 class="mt-8">1.5% Daily Commission</h3>
+        <p class="small">Every day your referral's plan generates profit, you receive 1.5% of that profit as a
+          commission. This repeats for the full cycle of their plan.</p>
+        <div class="mini-row"><span class="small muted">Example: referral earns Rs 104 daily profit</span><b class="accent">You earn Rs 1.56 / day</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card" id="refLinkCard">
+      <div class="between">
+        <div>
+          <h3 class="mb-0">Your unique referral link</h3>
+          <p class="small mb-0" id="refLinkHint">Sign in to generate your personal invite link and track earnings.</p>
+        </div>
+        <span class="badge badge-active" id="refCodeBadge">—</span>
+      </div>
+      <div class="copy-field mt-16">
+        <input class="form-control mono" id="refLinkInput" readonly value="Sign in to unlock your referral link" />
+        <button class="btn btn-primary" type="button" id="copyRefBtn">Copy Link</button>
+      </div>
+      <div class="grid g-4 mt-24" id="refStatsGrid"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Affiliate Hierarchy</span>
+      <h2>See how your network pays out</h2>
+      <p>Commissions flow from each member's active plan directly to the person who introduced them.</p>
+    </div>
+
+    <div class="card">
+      <div class="grid g-3" style="align-items:start;gap:26px">
+        <div class="text-center">
+          <div class="icon-box" style="margin:0 auto 12px">★</div>
+          <b>You</b>
+          <p class="tiny muted mb-0">Referrer account</p>
+        </div>
+        <div>
+          <div class="tiny muted mb-8">LEVEL 1 — DIRECT REFERRALS (UNLIMITED)</div>
+          <div class="grid" style="gap:10px">
+            <div class="mini-row"><div><b>Member A</b><div class="tiny muted">Advanced · Rs 2,600</div></div><b class="accent">+ Rs 260 instant</b></div>
+            <div class="mini-row"><div><b>Member B</b><div class="tiny muted">Intermediate · Rs 1,600</div></div><b class="accent">+ Rs 160 instant</b></div>
+            <div class="mini-row"><div><b>Member C</b><div class="tiny muted">Beginner · Rs 1,200</div></div><b class="accent">+ Rs 120 instant</b></div>
+          </div>
+        </div>
+        <div>
+          <div class="tiny muted mb-8">ONGOING COMMISSIONS</div>
+          <div class="grid" style="gap:10px">
+            <div class="mini-row"><span class="small muted">Member A daily profit Rs 104</span><b class="accent">Rs 1.56 / day</b></div>
+            <div class="mini-row"><span class="small muted">Member B daily profit Rs 56</span><b class="accent">Rs 0.84 / day</b></div>
+            <div class="mini-row"><span class="small muted">Member C daily profit Rs 36</span><b class="accent">Rs 0.54 / day</b></div>
+            <div class="mini-row"><span class="small muted">Combined recurring</span><b class="accent">Rs 2.94 / day</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap mt-24">
+      <table class="data-table">
+        <thead>
+          <tr><th>Downline Plan</th><th>Their Investment</th><th>Their Daily Profit</th><th>Your Instant Bonus</th><th>Your Daily Commission</th><th>Commission Over Cycle</th></tr>
+        </thead>
+        <tbody id="refTableBody"></tbody>
+      </table>
+    </div>
+    <p class="tiny muted mt-16">Instant bonus is paid once per referral on their first approved deposit.
+      Daily commission equals 1.5% of the profit generated by their active plan and is credited automatically.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="grid g-2" style="align-items:start">
+      <div class="card">
+        <h3>Your direct referrals</h3>
+        <p class="small">Live list of members who joined with your code.</p>
+        <div id="refList"></div>
+      </div>
+      <div class="grid" style="gap:18px">
+        <div class="card">
+          <h3>How to grow your team</h3>
+          <ul class="small mb-0">
+            <li>Share your invite link on WhatsApp, Facebook and Instagram.</li>
+            <li>Post your daily payout screenshots from the dashboard.</li>
+            <li>Explain the tiers clearly — small teams of 10 generate steady daily income.</li>
+            <li>Follow up with members so they complete their deposit and activate plans.</li>
+          </ul>
+        </div>
+        <div class="card card-glow">
+          <h3>Quick referral rules</h3>
+          <ul class="small mb-0">
+            <li>Referral codes can only be applied at registration.</li>
+            <li>Self-referrals and duplicate accounts are not eligible.</li>
+            <li>Bonuses are released only after admin approves the deposit.</li>
+            <li>Commissions are paid from the platform's profit share, never from the downline's balance.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card text-center" style="padding:48px;background:var(--grad-soft);border-color:rgba(0,230,195,.35)">
+      <h2>Start earning from your network today</h2>
+      <p style="max-width:620px;margin-inline:auto">Create your free account, grab your link and share it with
+        your circle. Every deposit from your team pays you twice.</p>
+      <div class="flex gap-12 center wrap mt-16">
+        <a class="btn btn-primary" href="register.html">Create Free Account</a>
+        <a class="btn btn-outline" href="contact.html">Ask a question</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/referral.js"></script>
+</body>
+</html>

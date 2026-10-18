@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login — Veltra</title>
+<meta name="description" content="Log in to your Veltra investment account using your username or email address." />
+<meta name="theme-color" content="#0F172A" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head><body data-page="login">
+
+<div id="app-header"></div>
+
+<div class="auth-wrap">
+  <aside class="auth-aside">
+    <span class="eyebrow">Member Access</span>
+    <h2>Welcome back to Veltra</h2>
+    <p>Track your daily profit, monitor your referrals and request payouts from one clean dashboard.</p>
+
+    <div class="mt-24">
+      <div class="auth-benefit"><div class="icon-box" data-icon="trend" data-icon-size="22"></div>
+        <div><b>Daily profit, automatically</b><p class="small mb-0">Earnings are credited every 24 hours while your plan runs.</p></div></div>
+      <div class="auth-benefit"><div class="icon-box" data-icon="referral" data-icon-size="22"></div>
+        <div><b>Referral income</b><p class="small mb-0">10% instant bonus plus 1.5% daily recurring commission.</p></div></div>
+      <div class="auth-benefit"><div class="icon-box" data-icon="shield" data-icon-size="22"></div>
+        <div><b>Verified transactions</b><p class="small mb-0">Every deposit and payout is reviewed by the admin desk.</p></div></div>
+      <div class="auth-benefit"><div class="icon-box" data-icon="zap" data-icon-size="22"></div>
+        <div><b>Fast local payouts</b><p class="small mb-0">Withdraw to your preferred local wallet or bank account.</p></div></div>
+    </div>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <h2>Sign in to your account</h2>
+      <p class="small">Use your username or email address to continue.</p>
+
+      <form id="loginForm" novalidate class="mt-24">
+        <div class="form-group">
+          <label class="form-label" for="loginId">Username or Email</label>
+          <input class="form-control" id="loginId" name="loginId" autocomplete="username" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Username or you@email.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <input class="form-control" id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••" required />
+        </div>
+        <div class="between mb-16">
+          <label class="checkbox"><input type="checkbox" id="rememberMe" /> <span>Keep me signed in</span></label>
+          <a class="small" href="contact.html" id="forgotPassword">Forgot password?</a>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" id="loginSubmitBtn">Sign In</button>
+        <div class="alert alert-danger mt-16 hidden" id="loginError">
+          <span style="cursor:pointer;" onclick="this.parentElement.classList.add('hidden')">×</span>
+          <div id="loginErrorText"></div>
+        </div>
+      </form>
+
+      <p class="small text-center mt-24">Don't have an account?
+        <a href="register.html">Create one free →</a></p>
+      <p class="tiny muted text-center">Protected by encrypted session handling. Never share your password.</p>
+    </div>
+  </main>
+</div>
+
+<div id="app-footer"></div>
+
+<!-- Veltra core: config → database client → store → auth → layout → page logic -->
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

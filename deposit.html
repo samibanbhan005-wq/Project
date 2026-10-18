@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deposit Funds — Wallet Gateway | Veltra</title>
+<meta name="description" content="Fund your Veltra account by local wallet or bank transfer, then submit your payment proof for admin verification." />
+<meta name="theme-color" content="#0F172A" />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="deposit">
+
+<div id="app-header"></div>
+
+<section class="section" style="padding-top:36px">
+  <div class="container">
+
+    <div class="section-head" style="margin-bottom:28px">
+      <span class="eyebrow">Deposit Gateway</span>
+      <h2>Fund your account</h2>
+      <p>Select one or more investment tiers, send the exact total to the official Veltra wallet, then submit the
+        proof form so an admin can verify and activate your plans.</p>
+    </div>
+
+    <div class="alert alert-warn mb-24">
+      <span>!</span>
+      <div>Only send funds to the official Veltra wallet. Veltra never asks for payments to any other number,
+        and never requests your wallet PIN or OTP.</div>
+    </div>
+
+    <div class="grid g-2" style="align-items:start">
+
+      <!-- Gateway -->
+      <div class="grid" style="gap:18px">
+        <div class="card">
+          <h3>Deposit steps</h3>
+          <div class="timeline mt-16">
+            <div class="timeline-item"><div class="marker"><span class="dot"></span><span class="bar"></span></div>
+              <div class="content"><b class="small">1. Select your plan(s)</b>
+                <div class="tiny muted">Choose one or more tiers. Several plans can run at the same time and the
+                  exact total is shown below.</div></div></div>
+            <div class="timeline-item"><div class="marker"><span class="dot"></span><span class="bar"></span></div>
+              <div class="content"><b class="small">2. Send the exact amount</b>
+                <div class="tiny muted">Transfer to the wallet using your wallet or banking app.</div></div></div>
+            <div class="timeline-item"><div class="marker"><span class="dot"></span><span class="bar"></span></div>
+              <div class="content"><b class="small">3. Submit the proof form</b>
+                <div class="tiny muted">Enter your sender number and the Transaction ID (TID) from your receipt.</div></div></div>
+            <div class="timeline-item"><div class="marker"><span class="dot"></span></div>
+              <div class="content"><b class="small">4. Wait for activation</b>
+                <div class="tiny muted">Status stays Pending until admin approval — usually within 30 minutes.</div></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="between mb-16">
+            <div class="card-title">Your deposit requests</div>
+            <a class="small" href="dashboard.html">Dashboard →</a>
+          </div>
+          <div id="depHistory"></div>
+        </div>
+      </div>
+
+      <!-- Proof form -->
+      <div class="card">
+        <h3>Payment proof submission</h3>
+        <p class="small">All fields are required. Your deposit will be reviewed against the wallet statement.</p>
+
+        <form id="depositForm" novalidate class="mt-16">
+          <div class="form-row two">
+            <div class="form-group">
+              <label class="form-label" for="dName">Full name</label>
+              <input class="form-control" id="dName" placeholder="Name as per bank account" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="dUsername">Username</label>
+              <input class="form-control" id="dUsername" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dEmail">Email address</label>
+            <input class="form-control" id="dEmail" type="email" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Investment plans</label>
+            <div class="plan-picker" id="dPlanPicker"></div>
+            <div class="field-hint">Select one or more tiers — you can run several plans at the same time.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dAmount">Total amount to send (PKR)</label>
+            <input class="form-control mono" id="dAmount" readonly />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dSender">Sender number (the number you paid from)</label>
+            <input class="form-control" id="dSender" inputmode="numeric" placeholder="03001234567" required />
+            <div class="field-hint">Enter the 11-digit mobile number linked to the sending account.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dTid">Transaction ID (TID) / Reference number</label>
+            <input class="form-control mono" id="dTid" placeholder="e.g. 8842137123" required />
+            <div class="field-hint">Found on your payment receipt or transaction history.</div>
+          </div>
+
+          <label class="checkbox mb-16">
+            <input type="checkbox" id="dConfirm" />
+            <span>I confirm I have sent the exact amount shown above to the official Veltra wallet and the details
+              I entered are accurate.</span>
+          </label>
+
+          <button class="btn btn-primary btn-block" type="submit" id="depositSubmit">Submit Deposit Proof</button>
+          <div class="alert alert-info mt-16"><span data-icon="info" data-icon-size="18"></span><div>Status will show as
+            <b>Pending</b> until an admin approves it. You'll see your plans activate on the dashboard right after
+            approval.</div></div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/deposit.js"></script>
+</body>
+</html>

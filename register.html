@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create Your Account — Veltra</title>
+<meta name="description" content="Register a free Veltra account in under a minute. No OTP required — just your details and an optional referral code." />
+<meta name="theme-color" content="#0F172A" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="register">
+
+<div id="app-header"></div>
+
+<div class="auth-wrap">
+  <aside class="auth-aside">
+    <span class="eyebrow">Join Veltra</span>
+    <h2>Start your investment journey</h2>
+    <p>Create your free account, choose a tier and earn daily profit with full transparency.</p>
+
+    <div class="mt-24">
+      <div class="auth-benefit"><div class="icon-box">✓</div>
+        <div><b>No OTP on sign-up</b><p class="small mb-0">Your account is created instantly — no waiting for codes.</p></div></div>
+      <div class="auth-benefit"><div class="icon-box">₨</div>
+        <div><b>Plans from Rs 1,200</b><p class="small mb-0">Beginner, Intermediate, Advanced and VIP Master tiers.</p></div></div>
+      <div class="auth-benefit"><div class="icon-box">⇗</div>
+        <div><b>Two-level referral income</b><p class="small mb-0">10% instant on first deposit, then 1.5% daily.</p></div></div>
+      <div class="auth-benefit"><div class="icon-box">💳</div>
+        <div><b>Local withdrawals</b><p class="small mb-0">Cash out to SadaPay, EasyPaisa or JazzCash.</p></div></div>
+    </div>
+
+    <div class="card card-flat mt-24">
+      <div class="tiny muted mb-8">REGISTRATION CHECKLIST</div>
+      <ul class="small mb-0">
+        <li>First & last name</li>
+        <li>Unique username</li>
+        <li>Active mobile number (11 digits)</li>
+        <li>Valid email address</li>
+        <li>Password (minimum 6 characters)</li>
+        <li>Optional referral code</li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <h2>Create your free account</h2>
+      <p class="small">It takes less than a minute. No OTP required.</p>
+
+      <form id="registerForm" novalidate class="mt-24">
+        <div class="form-row two">
+          <div class="form-group">
+            <label class="form-label" for="firstName">First name</label>
+            <input class="form-control" id="firstName" name="firstName" autocomplete="given-name" autocapitalize="words" placeholder="Ahmed" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lastName">Last name</label>
+            <input class="form-control" id="lastName" name="lastName" autocomplete="family-name" autocapitalize="words" placeholder="Raza" required />
+          </div>
+        </div>
+
+        <div class="form-row two">
+          <div class="form-group">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" id="username" name="username" autocomplete="username" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="20" placeholder="ahmedraza" required />
+            <div class="field-hint">Letters and numbers only, 4–20 characters.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone number</label>
+            <input class="form-control" id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="16" placeholder="03001234567" required />
+            <div class="field-hint">11 digits, e.g. 03XXXXXXXXX.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <input class="form-control" id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-row two">
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" id="password" name="password" type="password" autocomplete="new-password" placeholder="Minimum 6 characters" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="confirmPassword">Confirm password</label>
+            <input class="form-control" id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat password" required />
+          </div>
+        </div>
+
+        <div class="mb-16">
+          <div class="progress"><i id="strengthBar" style="width:0%"></i></div>
+          <div class="tiny muted mt-8" id="strengthText">Password strength: —</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="referralCode">Referral code (optional)</label>
+          <input class="form-control mono" id="referralCode" placeholder="e.g. DEMO2048" />
+          <div class="field-hint">Enter the code of the member who invited you to credit their commissions.</div>
+        </div>
+
+        <label class="checkbox mb-16">
+          <input type="checkbox" id="terms" />
+          <span>I agree to the Veltra Terms of Service, Risk Disclosure and Privacy Policy, and confirm that I am
+            investing at my own discretion.</span>
+        </label>
+
+        <button class="btn btn-primary btn-block" type="submit">Create Account</button>
+        <div class="alert alert-danger mt-16 hidden" id="registerError"><span>×</span><div></div></div>
+      </form>
+
+      <p class="small text-center mt-24">Already registered? <a href="login.html">Sign in →</a></p>
+    </div>
+  </main>
+</div>
+
+<div id="app-footer"></div>
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

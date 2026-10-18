@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Investment Plans & Pricing — Veltra</title>
+<meta name="description" content="Compare Veltra investment tiers: Beginner, Intermediate, Advanced and VIP Master. Daily profit credited automatically with referral income on every plan." />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="plans">
+
+<div id="app-header"></div>
+
+<section class="section" style="padding-bottom:36px">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Plans & Pricing</span>
+      <h2>Transparent tiers. Daily returns.</h2>
+      <p>Pick a tier, deposit the exact amount via SadaPay, and submit your proof of payment.
+        Profit is credited to your balance every 24 hours for the full cycle.</p>
+    </div>
+
+    <div class="alert alert-info mb-24" style="max-width:900px;margin-inline:auto">
+      <span>ℹ</span>
+      <div>
+        <b>How payouts work:</b> your daily profit is added to your Veltra balance. You can request a withdrawal at any
+        time once your balance reaches <b>Rs 500</b>. Principal is part of the total return shown on each plan.
+      </div>
+    </div>
+
+    <div class="grid g-4" id="plansGrid"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Compare</span>
+      <h2>Plan comparison</h2>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Plan</th><th>Investment</th><th>Daily Profit</th><th>Daily Return</th>
+            <th>Cycle</th><th>Total Return</th><th>Net Profit</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+    <p class="tiny muted mt-16">Figures are indicative and calculated from live plan settings.
+      Profit percentages apply to your invested amount for each day of the active cycle.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="grid g-3">
+      <div class="card">
+        <div class="icon-box mb-16">1</div>
+        <h3>Select your tier</h3>
+        <p class="mb-0 small">Click <b>Invest Now</b> on any plan — you'll be taken to the deposit page with that
+          tier pre-selected.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box mb-16">2</div>
+        <h3>Send the exact amount</h3>
+        <p class="mb-0 small">Transfer to the official SadaPay wallet shown on the deposit page, then submit the
+          proof form with your TID.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box mb-16">3</div>
+        <h3>Start earning daily</h3>
+        <p class="mb-0 small">After admin verification your plan goes live and profit begins accruing every
+          24 hours automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="grid g-2" style="align-items:start">
+      <div class="card card-glow">
+        <h3>Every plan includes</h3>
+        <ul class="plan-features mt-16">
+          <li>Automatic daily profit credit — no manual claiming</li>
+          <li>10% instant referral bonus on your first deposit</li>
+          <li>1.5% recurring daily commission from your downline</li>
+          <li>Withdrawals to SadaPay, EasyPaisa or JazzCash</li>
+          <li>Full transaction history in your dashboard</li>
+          <li>Human-verified deposits and payouts</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Important notes</h3>
+        <div class="grid mt-16" style="gap:12px">
+          <div class="alert alert-warn"><span>!</span><div>Transfer the <b>exact plan amount</b>. Partial amounts
+            are placed on hold until the balance is completed.</div></div>
+          <div class="alert alert-info"><span>ℹ</span><div>Each Transaction ID (TID) can only be submitted once.</div></div>
+          <div class="alert alert-danger"><span>×</span><div>Investment products carry risk. Never invest funds you
+            cannot afford to lose.</div></div>
+        </div>
+        <a class="btn btn-primary btn-block mt-16" href="deposit.html">Proceed to Deposit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/plans.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Veltra — Smart Investment & Daily Profit Platform</title>
+<meta name="description" content="Veltra is a modern digital investment platform offering structured daily-profit plans, instant referral rewards and secure local payouts across Pakistan." />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="home">
+
+<div id="app-header"></div>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">● Live platform · Pakistan</span>
+      <h1>Invest Smarter, <span>Earn Daily</span> With Veltra</h1>
+      <p class="lead">Structured investment tiers starting from Rs 1,200 with daily profit credited straight to
+        your dashboard balance. Simple wallet deposits, instant referral rewards and fast local payouts.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="register.html">Create Free Account</a>
+        <a class="btn btn-outline" href="plans.html">Explore Plans</a>
+      </div>
+      <div class="hero-trust">
+        <div><strong id="trustUsers">0</strong><span>Registered investors</span></div>
+        <div><strong id="trustInvested">0</strong><span>Total invested (Rs)</span></div>
+        <div><strong id="trustPaid">0</strong><span>Payouts processed (Rs)</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="mockup">
+        <div class="mockup-top"><i></i><i></i><i></i></div>
+        <div class="balance-card">
+          <div class="lbl">Available Balance</div>
+          <div class="amt" id="mockBalance">Rs 18,750.45</div>
+          <div class="small" style="font-weight:700;opacity:.85">Advanced Plan · Active</div>
+        </div>
+        <div class="mini-list">
+          <div class="mini-row">
+            <div><div class="nm">Daily Profit Credited</div><div class="sm">Today · 09:00 AM</div></div>
+            <div class="up" style="font-weight:800">+ Rs 104.00</div>
+          </div>
+          <div class="mini-row">
+            <div><div class="nm">Referral Commission</div><div class="sm">from @ayesha · 1.5% daily</div></div>
+            <div class="up" style="font-weight:800">+ Rs 0.84</div>
+          </div>
+          <div class="mini-row">
+            <div><div class="nm">Withdrawal Dispatched</div><div class="sm">Local wallet · 03001234567</div></div>
+            <div class="down" style="font-weight:800">− Rs 3,200.00</div>
+          </div>
+        </div>
+      </div>
+      <div class="float-badge one"><span class="live-dot"></span> 1,284 payouts today</div>
+      <div class="float-badge two">🔒 Bank-grade encryption</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TICKER ============================= -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ============================= STATS ============================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Platform Performance</span>
+      <h2>Real numbers, real investors</h2>
+      <p>Veltra keeps every deposit, profit credit and payout verifiable from your dashboard.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-value" data-count="11840" data-prefix="">0</div><div class="stat-label">Active Investors</div></div>
+      <div class="stat-card"><div class="stat-value" data-count="42000000" data-compact="1" data-prefix="Rs ">0</div><div class="stat-label">Total Invested</div></div>
+      <div class="stat-card"><div class="stat-value" data-count="15600000" data-compact="1" data-prefix="Rs ">0</div><div class="stat-label">Profits & Payouts</div></div>
+      <div class="stat-card"><div class="stat-value" data-count="99.2" data-decimals="1" data-suffix="%">0</div><div class="stat-label">Withdrawal Success Rate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PLANS PREVIEW + FEED ====================== -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Investment Tiers</span>
+      <h2>Choose the plan that fits your goals</h2>
+      <p>Every tier credits profit daily and unlocks referral income on two levels.</p>
+    </div>
+    <div class="grid g-4" id="homePlans"></div>
+
+    <div class="grid g-2 mt-32" style="align-items:start">
+      <div class="card">
+        <div class="between mb-16">
+          <div class="card-title"><span class="live-dot"></span> Live Transaction Feed</div>
+          <span class="badge badge-active">Realtime</span>
+        </div>
+        <div class="feed" id="homeFeed"></div>
+      </div>
+      <div class="grid" style="gap:18px">
+        <div class="card card-glow">
+          <div class="icon-box mb-16">🛡</div>
+          <h3>Deposits verified by a human</h3>
+          <p class="mb-0">Every deposit transfer is matched against the Transaction ID (TID) you submit.
+            Once verified, your plan activates automatically and the 10% referral bonus is released instantly.</p>
+        </div>
+        <div class="card">
+          <div class="between mb-16">
+            <div class="card-title">Platform Snapshot</div>
+            <a class="small" href="plans.html">View plans →</a>
+          </div>
+          <div class="grid" style="gap:10px">
+            <div class="mini-row"><span class="muted small">Pending withdrawal requests</span><b id="snapPendingWd">0</b></div>
+            <div class="mini-row"><span class="muted small">Active investment plans</span><b id="snapActivePlans">0</b></div>
+            <div class="mini-row"><span class="muted small">Referral payouts released</span><b id="snapReferral">Rs 0</b></div>
+            <div class="mini-row"><span class="muted small">Average approval time</span><b>Under 30 minutes</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SECURITY =========================== -->
+<section class="section" style="background:rgba(11,18,32,.55);border-block:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Security First</span>
+      <h2>Your capital, protected at every step</h2>
+      <p>Veltra is built on transparent processes — no hidden deductions, no surprise terms.</p>
+    </div>
+    <div class="grid g-4">
+      <div class="card card-hover">
+        <div class="icon-box mb-16">🔐</div>
+        <h3>Encrypted Accounts</h3>
+        <p class="mb-0 small">Passwords are stored as secure digests and every session is bound to your account.</p>
+      </div>
+      <div class="card card-hover">
+        <div class="icon-box mb-16">✓</div>
+        <h3>Manual Deposit Review</h3>
+        <p class="mb-0 small">An admin verifies each TID before any plan is activated or bonus is released.</p>
+      </div>
+      <div class="card card-hover">
+        <div class="icon-box mb-16">💳</div>
+        <h3>Local Payout Channels</h3>
+        <p class="mb-0 small">Withdraw to your preferred local wallet or bank account, with automatic balance refunds on rejection.</p>
+      </div>
+      <div class="card card-hover">
+        <div class="icon-box mb-16">🎧</div>
+        <h3>24/7 Human Support</h3>
+        <p class="mb-0 small">A dedicated support desk handles deposit, withdrawal and referral questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== HOW IT WORKS ========================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Getting Started</span>
+      <h2>Four steps from sign-up to payout</h2>
+      <p>No OTP delays, no paperwork. Register and start in minutes.</p>
+    </div>
+    <div class="steps">
+      <div class="step card card-flat">
+        <h3>Create Your Account</h3>
+        <p class="mb-0 small">Register with your name, username, phone, email and an optional referral code.</p>
+      </div>
+      <div class="step card card-flat">
+        <h3>Fund Your Account</h3>
+        <p class="mb-0 small">Send your plan amount to the official wallet shown inside your dashboard and submit the proof form with the TID.</p>
+      </div>
+      <div class="step card card-flat">
+        <h3>Plan Activation</h3>
+        <p class="mb-0 small">Once approved, your plan goes live and daily profit starts crediting to your balance.</p>
+      </div>
+      <div class="step card card-flat">
+        <h3>Withdraw Anytime</h3>
+        <p class="mb-0 small">Request payouts to your preferred wallet. Funds are dispatched after approval.</p>
+      </div>
+    </div>
+    <div class="text-center mt-32"><a class="btn btn-outline" href="how-it-works.html">See the full walkthrough</a></div>
+  </div>
+</section>
+
+<!-- ========================== REFERRAL CTA ========================= -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card card-glow" style="padding:44px">
+      <div class="between" style="gap:32px">
+        <div style="max-width:560px">
+          <span class="eyebrow">Referral Program</span>
+          <h2 class="mb-8">Earn 10% instantly — then 1.5% daily</h2>
+          <p>Share your unique invite link. You receive a <b class="accent">10% instant bonus</b> on your
+            referral's first deposit, plus a recurring <b class="accent">1.5% daily commission</b> on the
+            profits their plan generates. No limit on team size.</p>
+          <div class="flex gap-12 wrap mt-16">
+            <a class="btn btn-primary" href="register.html">Start Referring</a>
+            <a class="btn btn-ghost" href="referral.html">How commissions work →</a>
+          </div>
+        </div>
+        <div class="card card-flat" style="min-width:260px">
+          <div class="tiny muted mb-8">YOUR INVITE LINK (example)</div>
+          <div class="copy-value mono small">veltra.pk/register.html?ref=DEMO2048</div>
+          <div class="grid mt-16" style="gap:10px">
+            <div class="mini-row"><span class="muted small">Direct referrals</span><b>24</b></div>
+            <div class="mini-row"><span class="muted small">Instant bonuses</span><b class="accent">Rs 4,860</b></div>
+            <div class="mini-row"><span class="muted small">Recurring commissions</span><b class="accent">Rs 12,340</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>How soon is my plan activated after depositing?</summary>
+        <p>Deposits are reviewed manually. In most cases verification completes within 30 minutes, after which your
+          plan activates automatically and the first daily profit is credited within 24 hours.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which payment methods does Veltra support?</summary>
+        <p>Deposit and payout wallet details are shown inside your dashboard once you sign in. Withdrawals can be
+          requested to your preferred local wallet or bank account.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do referral commissions work?</summary>
+        <p>You earn 10% of your referral's first deposit instantly, and afterwards 1.5% of the daily profit their
+          active plan generates. Commissions are credited straight to your dashboard balance.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if my withdrawal is rejected?</summary>
+        <p>Rejected requests are refunded to your balance automatically — no amount is lost. You'll see the refund
+          entry in your transaction history.</p>
+      </details>
+    </div>
+    <div class="text-center mt-24"><a class="btn btn-ghost" href="how-it-works.html#faq">Read all FAQs →</a></div>
+  </div>
+</section>
+
+<!-- ============================= CTA ============================== -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card text-center" style="padding:52px;background:var(--grad-soft);border-color:rgba(0,230,195,.35)">
+      <h2>Ready to put your money to work?</h2>
+      <p style="max-width:600px;margin-inline:auto">Join thousands of investors using Veltra to build a steady
+        daily income stream with full transparency.</p>
+      <div class="flex gap-12 center wrap mt-16">
+        <a class="btn btn-primary" href="register.html">Create Free Account</a>
+        <a class="btn btn-outline" href="contact.html">Talk to Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

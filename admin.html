@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Control Panel — Veltra</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#0F172A" />
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="admin">
+
+<div id="app-header"></div>
+
+<section class="section" style="padding-top:32px">
+  <div class="container">
+
+    <div class="dash-head mb-24">
+      <div class="between">
+        <div>
+          <span class="eyebrow">Administration</span>
+          <h2 class="mb-8">Control Panel</h2>
+          <p class="small mb-0">Manage members, approve deposits and withdrawals, and monitor platform finances.</p>
+        </div>
+        <div class="flex gap-12 wrap">
+          <span class="badge badge-pending" id="pendingBadges">0 pending</span>
+          <a class="btn btn-outline btn-sm" href="dashboard.html">My dashboard</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-shell">
+      <aside class="admin-side" id="adminNav">
+        <button class="active" data-panel="overview"><span data-icon="dashboard"></span> Overview</button>
+        <button data-panel="users"><span data-icon="users"></span> User Management</button>
+        <button data-panel="deposits"><span data-icon="zap"></span> Deposit Approvals <span class="pill-count hidden" id="pillDeposits">0</span></button>
+        <button data-panel="withdrawals"><span data-icon="withdraw"></span> Withdrawal Approvals <span class="pill-count hidden" id="pillWithdrawals">0</span></button>
+        <button data-panel="ledger"><span data-icon="list"></span> Transactions</button>
+      </aside>
+
+      <div>
+        <!-- OVERVIEW -->
+        <div class="admin-panel active" data-panel="overview">
+          <div class="kpi-grid mb-24" id="adminKpis"></div>
+          <div class="grid g-2" style="align-items:start">
+            <div class="card">
+              <h3>Financial breakdown</h3>
+              <div class="grid mt-16" style="gap:10px" id="financeList"></div>
+            </div>
+            <div class="card">
+              <div class="between mb-16">
+                <div class="card-title">Latest platform activity</div>
+              </div>
+              <div class="grid" style="gap:10px" id="adminRecent"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- USERS -->
+        <div class="admin-panel" data-panel="users">
+          <div class="between mb-16">
+            <div>
+              <h3 class="mb-0">User management</h3>
+              <p class="small mb-0">View members, adjust balances and block or activate accounts.</p>
+            </div>
+            <input class="form-control" id="userSearch" placeholder="Search username, email or phone" style="max-width:300px" />
+          </div>
+          <div id="userTable"></div>
+        </div>
+
+        <!-- DEPOSITS -->
+        <div class="admin-panel" data-panel="deposits">
+          <div class="between mb-16">
+            <div>
+              <h3 class="mb-0">Deposit approvals</h3>
+              <p class="small mb-0">Approving a deposit activates the user's plan and releases the 10% referral bonus.</p>
+            </div>
+            <select class="form-control" id="depFilter" style="max-width:190px">
+              <option value="pending">Pending only</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
+              <option value="all">All deposits</option>
+            </select>
+          </div>
+          <div id="depositTable"></div>
+        </div>
+
+        <!-- WITHDRAWALS -->
+        <div class="admin-panel" data-panel="withdrawals">
+          <div class="between mb-16">
+            <div>
+              <h3 class="mb-0">Withdrawal approvals</h3>
+              <p class="small mb-0">Dispatch approved payouts or reject with an automatic balance refund.</p>
+            </div>
+            <select class="form-control" id="wdFilter" style="max-width:190px">
+              <option value="pending">Pending only</option>
+              <option value="approved">Dispatched</option>
+              <option value="rejected">Rejected</option>
+              <option value="all">All requests</option>
+            </select>
+          </div>
+          <div id="wdTable"></div>
+        </div>
+
+        <!-- LEDGER -->
+        <div class="admin-panel" data-panel="ledger">
+          <h3>Platform transaction ledger</h3>
+          <p class="small">Every profit credit, commission, deposit hold and payout recorded by the system.</p>
+          <div id="ledgerTable"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Action modal -->
+<div class="modal-overlay" id="actionModal">
+  <div class="modal">
+    <div class="between mb-16">
+      <h3 class="mb-0" id="modalTitle">Action</h3>
+      <button class="btn btn-ghost btn-sm" type="button" data-close-modal aria-label="Close" data-icon="close" data-icon-size="18"></button>
+    </div>
+    <div id="modalBody"></div>
+    <div class="flex gap-12 mt-24" style="justify-content:flex-end">
+      <button class="btn btn-ghost" type="button" data-close-modal>Cancel</button>
+      <button class="btn btn-primary" type="button" id="modalConfirm">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/firebase-config.js"></script>
+<script src="assets/js/firebase-db.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/firebase-auth.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
